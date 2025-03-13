@@ -8,7 +8,7 @@ This is a RESTful API for managing schools, including adding new schools and ret
 
 Add a new school  
 Retrieve a list of schools by location  
-Pagination support
+`Pagination support`
 
 ---
 

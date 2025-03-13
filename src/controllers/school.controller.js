@@ -121,6 +121,23 @@ const listSchools = asyncHandler(async (req, res, next) => {
         );
     }
 
+    if (userLongitude < -180 || userLongitude > 180) {
+        return next(
+            new ApiError(
+                StatusCodes.BAD_REQUEST,
+                "Longitude must be between -180 and 180.",
+            ),
+        );
+    }
+    if (userLatitude < -90 || userLatitude > 90) {
+        return next(
+            new ApiError(
+                StatusCodes.BAD_REQUEST,
+                "Latitude must be between -90 and 90.",
+            ),
+        );
+    }
+
     let schools = [];
 
     for (let i = userRadius; i < 1000; i += 100) {
